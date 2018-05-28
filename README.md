@@ -1,4 +1,88 @@
-# Front end guidelines 2018
+# Front end html css guidelines 2018
+
+### Contents
+- [Why have guidelines?](#why-have-guidelines)
+- [Principles for scalable front end development](#principles-for-scalable-front-end-development)
+- [Why used component based CSS?](#why-used-component-based-css)
+- [scss-lint config adjustments](#scss-lint-config-adjustments)
+- [Nesting and specificity](#nesting-and-specificity)
+- [Context vs component / element styles](#context-vs-component--element-styles)
+- [The interface is a flexible design system](#the-interface-is-a-flexible-design-system)
+- [Content driven media queries - not device driven](#content-driven-media-queries---not-device-driven)
+- [Content agnostic class names](#content-agnostic-class-names)
+- [Avoid use of IDs](#avoid-use-of-ids)
+- [Quasi-qualified selectors](#quasi-qualified-selectors)
+- [CSS structure](#css-structure)
+- [Naming system - Block Element Modifier](#naming-system---block-element-modifier)
+- [Class name prefixes](#class-name-prefixes)
+- [Encapsulated, structured, component based CSS](#encapsulated-structured-component-based-css)
+- [Using \@at-root for component encapsulation](#using at-root-for-component-encapsulation)
+- [CSS Titles](#css-titles)
+- [Declaration order](#declaration-order)
+- [Z-Index variable table](#z-index-variable-table)
+- [Interface interactions - hierarchy of difficulty](#interface-interactions---hierarchy-of-difficulty)
+- [Semantic HTML](#semantic-html)
+- [Gulp additions](#gulp-additions)
+- [Additional best practices](#additional-best-practices)
+
+<!-- TO DO 
+
+*add to guidelines *
+* utilities to have important
+* (not): selector to not be used anywhere - too wide reaching, high specificity and unsafe. component based css is scoped
+* u-margin-zero - change to u-margin-0 
+* As a component is a re-usable piece of UI, all of its styles should be self contained. Components should not rely on grid classes to manage their layout or utility classes, as they should be self sustainable. Grid classes can have components as children, but not the other way around. Coupling our grid layout with components makes components more fragile. if we need to adjust a component that uses grid classes, it means updating markup across the site. Refactoring our grid system would also impact the component due to this unneeded coupling. [should we allow use of l-content-width in components?]  
+* HOWEVER animation utilities can be used on components.. utilities should really have 1 job -- > perhaps animation classes should be their own section? `.a-const-rotate``.a-spin-in`
+* layout classes to be on own element for clarity?
+* class names to be component -> utility -> js hook. 
+*Components should use utilities sparingly, if at all, to allow truly component based ui elements
+
+*Components and animation*
+Maybe - All components should be styled and visible without any js or animation as static style components.
+If they are animated, this should be seen as an enhancement on its base functionality?
+
+mention how order of elements in scss file should match DOM
+
+*animation guidelines*
+ bespoke animations specific to the component to be led tin component
+		* global reusable animations to be in the utilities
+		* animations fall into 2 categories - triggered and constant
+			* `u-animate` and `u-animated` to define constant animation and once only - run by david
+			* update utilities to suit
+
+*js hooks* 
+Do we need to target every element used in the app.js file with a js-hook?
+In apps we allow targeting of class names. Sometimes we can put too many js-classes on. Maybe for apps they should be on the root only? 
+Other wise we can get a lot of js-classes which isnt a bad thing, or maybe try and minimise the js-classes.
+Having the js-classes does encourage the dev to think carefully about the targetting.
+
+*State vs modifier*
+This can be awkward, I think a good way to think of state is when a user interacts with something and it changes its layout = its a state change. 
+
+*Utilities & components*
+The general rule is - dont ever use utilities with components. This is so that utilities are not used to change the cosmetic styles of components to keep ui consistency. However margin utilities are the only exception to can 
+
+*Comp library*
+should comp-library-dist be in the gitignore
+
+*Use of l-content width vs mixin*
+should components have max-widths in them?
+or should all components have no width concerns as they should fill their parents width.?
+
+
+Animation classes, work in progress:
+Maybe making this its own utility, like `u-animate-slide-in-ltr` (left to right) as the child and parent would have `u-overflow-hidden`.
+Use `.is-active` or `.is-animated` for making the animations run. Be less markup clutter and fit in with our state approach.
+
+Globally trigger animation utility classes.
+Animation types - constant and triggered
+Ability to animate something by adding one class to it, `u-animate-spin` to make it rotate.
+
+Viewport entry animation
+`class=“u-animate-slide-ltr" data-add-class-when-in-viewport=“is-active”;`
+could target via js with `$('[data-add-class-when-in-viewport]')`
+then add the class dynamcally on viewport enter
+-->
 
 ### Why have guidelines?
 
@@ -363,7 +447,7 @@ example element - 
 - [3] Root component properties come first
 - [4] Then child element selectors using &__ to select child but using BEM selection
 - [5] Then modifier classes. Element modifiers can be nested within their element selector - see `&__title` with its child `&--large` for an example below.
-- [6] Then any `@at-root` selectors (see below for an explanation) 
+- [6] Then any @at-root selectors (see below for an explanation) 
 - [7] Then state changes
 - [8] Then media queries last. The media queries should comprise nearly entirely of layout changes: padding, margin, width, height, position etc. Cosmetic styles should not change.
 
