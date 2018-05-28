@@ -598,7 +598,7 @@ to maintain an organised z-index system when adjusting nested z-index values.
 
 ### Interface interactions - hierarchy of difficulty
 
-When creating complex user interactions, such as behavioural changes we should aim to make the code as readable, maintainable and reusable as possible. Javascript can be very complicated, CSS is simpler, HTML / markup is simpler still. We should first try to achieve our object in pure HTML and CSS. If needed we will need to use JS / jQuery to meet the interaction requirements. First we should try only adding and removing classes via JS / jQuery to reach the desired outcome. If the desired result is not met we will sometimes need to change styles via JS / jQuery. 
+When creating complex user interactions, such as behavioural changes we should aim to make the code as readable, maintainable and reusable as possible. Javascript can be very complicated, CSS is simpler, HTML / markup is simpler still. We should first try to achieve our objective in pure HTML and CSS. If needed we will need to use JS / jQuery to meet the interaction requirements. First we should try only adding and removing classes via JS / jQuery to reach the desired outcome. If the desired result is not met we will sometimes need to change styles via JS / jQuery. 
 
 Order of difficulty (from least complex, to most):
 
