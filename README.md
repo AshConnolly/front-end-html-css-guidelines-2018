@@ -1,30 +1,30 @@
 # Front end html css guidelines 2018
 
 ### Contents
-  - [Contents](#contents)
-  - [Why have guidelines?](#why-have-guidelines)
-  - [Principles for scalable front end development](#principles-for-scalable-front-end-development)
-  - [Why used component based CSS?](#why-used-component-based-css)
-  - [Nesting and specificity](#nesting-and-specificity)
-  - [Context vs component / element styles](#context-vs-component--element-styles)
-  - [The interface is a flexible design system](#the-interface-is-a-flexible-design-system)
-  - [Content driven media queries - not device driven](#content-driven-media-queries---not-device-driven)
-  - [Content agnostic class names](#content-agnostic-class-names)
-  - [Avoid use of IDs](#avoid-use-of-ids)
-  - [Quasi-qualified selectors](#quasi-qualified-selectors)
-  - [CSS structure](#css-structure)
-  - [Naming system - Block Element Modifier](#naming-system---block-element-modifier)
-  - [Class name prefixes](#class-name-prefixes)
-  - [Encapsulated, structured, component based CSS](#encapsulated-structured-component-based-css)
-  - [Using `@at-root` for component encapsulation](#using at-root-for-component-encapsulation)
-  - [CSS Titles](#css-titles)
-  - [Declaration order](#declaration-order)
-  - [Z-Index variable table](#z-index-variable-table)
-  - [Interface interactions - hierarchy of difficulty](#interface-interactions---hierarchy-of-difficulty)
-  - [Semantic HTML](#semantic-html)
-  - [Gulp additions](#gulp-additions)
-  - [Additional best practices](#additional-best-practices)
-  - [scss-lint config adjustments](#scss-lint-config-adjustments)
+        - [Contents](#contents)
+        - [Why have guidelines?](#why-have-guidelines)
+        - [Principles for scalable front end development](#principles-for-scalable-front-end-development)
+        - [Why used component based CSS?](#why-used-component-based-css)
+        - [Nesting and specificity](#nesting-and-specificity)
+        - [Context vs component / element styles](#context-vs-component--element-styles)
+        - [The interface is a flexible design system](#the-interface-is-a-flexible-design-system)
+        - [Content driven media queries - not device driven](#content-driven-media-queries---not-device-driven)
+        - [Content agnostic class names](#content-agnostic-class-names)
+        - [Avoid use of IDs](#avoid-use-of-ids)
+        - [Quasi-qualified selectors](#quasi-qualified-selectors)
+        - [CSS structure](#css-structure)
+        - [Naming system - Block Element Modifier](#naming-system---block-element-modifier)
+        - [Class name prefixes](#class-name-prefixes)
+        - [Encapsulated, structured, component based CSS](#encapsulated-structured-component-based-css)
+        - [Using `at-root` for component encapsulation](#using at-root-for-component-encapsulation)
+        - [CSS Titles](#css-titles)
+        - [Declaration order](#declaration-order)
+        - [Z-Index variable table](#z-index-variable-table)
+        - [Interface interactions - hierarchy of difficulty](#interface-interactions---hierarchy-of-difficulty)
+        - [Semantic HTML](#semantic-html)
+        - [Gulp additions](#gulp-additions)
+        - [Additional best practices](#additional-best-practices)
+        - [scss-lint config adjustments](#scss-lint-config-adjustments)
 
 <!-- TO DO 
 
@@ -481,7 +481,7 @@ example element - 
 
 See a compiled version here - [https://gist.github.com/Ashffrees/a71bbeae0bc58db2e43a6304b7842400](https://gist.github.com/Ashffrees/a71bbeae0bc58db2e43a6304b7842400)
 
-### Using `@at-root` for component encapsulation
+### Using `at-root` for component encapsulation
 
 If a component changes it's properties based on another element up the DOM tree receiving a change, like a new class, you need to manage those styles carefully. A good example is a menu opening when a class is added to the html. A good way to manage this is using the `@at-root` selector. This brings the current selection back to the root of the document, the html tag.
 
