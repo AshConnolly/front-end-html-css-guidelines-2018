@@ -1,29 +1,32 @@
 # Front end html css guidelines 2018
 
 ### Contents
-- [Why have guidelines?](#why-have-guidelines)
-- [Principles for scalable front end development](#principles-for-scalable-front-end-development)
-- [Why used component based CSS?](#why-used-component-based-css)
-- [scss-lint config adjustments](#scss-lint-config-adjustments)
-- [Nesting and specificity](#nesting-and-specificity)
-- [Context vs component / element styles](#context-vs-component--element-styles)
-- [The interface is a flexible design system](#the-interface-is-a-flexible-design-system)
-- [Content driven media queries - not device driven](#content-driven-media-queries---not-device-driven)
-- [Content agnostic class names](#content-agnostic-class-names)
-- [Avoid use of IDs](#avoid-use-of-ids)
-- [Quasi-qualified selectors](#quasi-qualified-selectors)
-- [CSS structure](#css-structure)
-- [Naming system - Block Element Modifier](#naming-system---block-element-modifier)
-- [Class name prefixes](#class-name-prefixes)
-- [Encapsulated, structured, component based CSS](#encapsulated-structured-component-based-css)
-- [Using \@at-root for component encapsulation](#using at-root-for-component-encapsulation)
-- [CSS Titles](#css-titles)
-- [Declaration order](#declaration-order)
-- [Z-Index variable table](#z-index-variable-table)
-- [Interface interactions - hierarchy of difficulty](#interface-interactions---hierarchy-of-difficulty)
-- [Semantic HTML](#semantic-html)
-- [Gulp additions](#gulp-additions)
-- [Additional best practices](#additional-best-practices)
+  - [Contents](#contents)
+  - [Why have guidelines?](#why-have-guidelines)
+  - [Principles for scalable front end development](#principles-for-scalable-front-end-development)
+  - [Why used component based CSS?](#why-used-component-based-css)
+  - [Nesting and specificity](#nesting-and-specificity)
+  - [Context vs component / element styles](#context-vs-component--element-styles)
+  - [The interface is a flexible design system](#the-interface-is-a-flexible-design-system)
+  - [Content driven media queries - not device driven](#content-driven-media-queries---not-device-driven)
+  - [Content agnostic class names](#content-agnostic-class-names)
+  - [Avoid use of IDs](#avoid-use-of-ids)
+  - [Quasi-qualified selectors](#quasi-qualified-selectors)
+  - [CSS structure](#css-structure)
+  - [Naming system - Block Element Modifier](#naming-system---block-element-modifier)
+  - [Class name prefixes](#class-name-prefixes)
+  - [Encapsulated, structured, component based CSS](#encapsulated-structured-component-based-css)
+  - [Using \@at-root for component encapsulation](#using \at-root-for-component-encapsulation)
+  - [CSS Titles](#css-titles)
+  - [Declaration order](#declaration-order)
+  - [Z-Index variable table](#z-index-variable-table)
+  - [Interface interactions - hierarchy of difficulty](#interface-interactions---hierarchy-of-difficulty)
+  - [Semantic HTML](#semantic-html)
+  - [Gulp additions](#gulp-additions)
+  - [Additional best practices](#additional-best-practices)
+  - [scss-lint config adjustments](#scss-lint-config-adjustments)
+
+<!-- /TOC -->
 
 <!-- TO DO 
 
@@ -115,52 +118,6 @@ These are taken from the Harry Roberts' talk '[CSS for Software Engineers for CS
 ### Why used component based CSS?
 
 When building interfaces we are creating a system of elements and components that will be used in various combinations. If we keep this in mind we can create a truly fluid and flexible interface system - much like the [Brad Frost - Atomic Design](https://vimeo.com/67476280) approach. I've written about how atomic / component driven design can transition easily into component based css for better, easier development, see the article [here](https://medium.freecodecamp.com/a-more-seamless-workflow-style-guides-for-better-design-and-development-639fc55be28c#.2sd1cbhc6).
-
-### scss-lint config adjustments 
-
-```
-linters:  
-    DuplicateProperty:
-
-     enabled: false # We have fall backs with duplicate tags
-
-Indentation:  
-     enabled: true # 4 spaces of indentation  
-     width: 4
-
-SelectorDepth:  
-     enabled: true # 4 deep selector  
-     max_depth: 4
-
-NestingDepth:  
-     enabled: true # 4 deep selector  
-     max_depth: 4
-
-PropertySortOrder:  
-     enabled: false # don't order properties alphabetically
-
-NameFormat:  
-     enabled: true # make vars etc use small-hyphen-case  
-     convention: hyphenated_lowercase
-
-# new changes below
-
-QualifyingElement:  
-    enabled: false # allow qualifying of attributes and classes  
-   # we should avoid naming tags as it adds unnecessary specificity. Eg - div.thing {colour:red}  
-   # Quasi qualified sectors are ok for readability sake e.g. - /*ul*/.list
-
-SingleLinePerProperty:  
-    true # better readability
-
-StringQuotes:  
-    enabled: true  
-    style: single_quote #faster to type than double quote
-
-SelectorFormat:  
-    enabled: true  
-    convention: hyphenated_BEM # to parse CSS and alert and non BEM syntax
-```
 
 ### Nesting and specificity
 
@@ -526,7 +483,7 @@ example element - 
 
 See a compiled version here - [https://gist.github.com/Ashffrees/a71bbeae0bc58db2e43a6304b7842400](https://gist.github.com/Ashffrees/a71bbeae0bc58db2e43a6304b7842400)
 
-### Using `@at-root` for component encapsulation
+### Using \@at-root for component encapsulation
 
 If a component changes it's properties based on another element up the DOM tree receiving a change, like a new class, you need to manage those styles carefully. A good example is a menu opening when a class is added to the html. A good way to manage this is using the `@at-root` selector. This brings the current selection back to the root of the document, the html tag.
 
@@ -627,8 +584,55 @@ MQpacker - concatenates media queries for smaller CSS [https://github.com/hail2
 - Chaining variables for context:
 ```
     $blue:#00338d; 
-
     $highlight: $blue;     
+    ...
+    .title {
+      color: $highlight;
+    }
+```
 
-    .title {$highlight}
+### scss-lint config adjustments 
+
+```
+linters:  
+    DuplicateProperty:
+
+     enabled: false # We have fall backs with duplicate tags
+
+Indentation:  
+     enabled: true # 4 spaces of indentation  
+     width: 4
+
+SelectorDepth:  
+     enabled: true # 4 deep selector  
+     max_depth: 4
+
+NestingDepth:  
+     enabled: true # 4 deep selector  
+     max_depth: 4
+
+PropertySortOrder:  
+     enabled: false # don't order properties alphabetically
+
+NameFormat:  
+     enabled: true # make vars etc use small-hyphen-case  
+     convention: hyphenated_lowercase
+
+# new changes below
+
+QualifyingElement:  
+    enabled: false # allow qualifying of attributes and classes  
+   # we should avoid naming tags as it adds unnecessary specificity. Eg - div.thing {colour:red}  
+   # Quasi qualified sectors are ok for readability sake e.g. - /*ul*/.list
+
+SingleLinePerProperty:  
+    true # better readability
+
+StringQuotes:  
+    enabled: true  
+    style: single_quote #faster to type than double quote
+
+SelectorFormat:  
+    enabled: true  
+    convention: hyphenated_BEM # to parse CSS and alert and non BEM syntax
 ```
