@@ -16,7 +16,7 @@
 - [Naming system - Block Element Modifier](#naming-system---block-element-modifier)
 - [Class name prefixes](#class-name-prefixes)
 - [Encapsulated, structured, component based CSS](#encapsulated-structured-component-based-css)
-- [Using `at-root` for component encapsulation](#using at-root-for-component-encapsulation)
+- [Using at-root for component encapsulation](#using-at-root-for-component-encapsulation)
 - [CSS Titles](#css-titles)
 - [Declaration order](#declaration-order)
 - [Z-Index variable table](#z-index-variable-table)
@@ -481,7 +481,7 @@ example element - 
 
 See a compiled version here - [https://gist.github.com/Ashffrees/a71bbeae0bc58db2e43a6304b7842400](https://gist.github.com/Ashffrees/a71bbeae0bc58db2e43a6304b7842400)
 
-### Using `at-root` for component encapsulation
+### Using at-root for component encapsulation
 
 If a component changes it's properties based on another element up the DOM tree receiving a change, like a new class, you need to manage those styles carefully. A good example is a menu opening when a class is added to the html. A good way to manage this is using the `@at-root` selector. This brings the current selection back to the root of the document, the html tag.
 
