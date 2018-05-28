@@ -16,7 +16,7 @@
   - [Naming system - Block Element Modifier](#naming-system---block-element-modifier)
   - [Class name prefixes](#class-name-prefixes)
   - [Encapsulated, structured, component based CSS](#encapsulated-structured-component-based-css)
-  - [Using@at-root for component encapsulation](#using \at-root-for-component-encapsulation)
+  - [Using @at-root for component encapsulation](#using \at-root-for-component-encapsulation)
   - [CSS Titles](#css-titles)
   - [Declaration order](#declaration-order)
   - [Z-Index variable table](#z-index-variable-table)
