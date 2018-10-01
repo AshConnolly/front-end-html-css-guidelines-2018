@@ -412,7 +412,7 @@ example element - 
 \*------------------------------------*/
 
 .c-card {  
-  $class: c-card; // [1]  
+  $class: c-card; // [1] could also do "$class: &;"
   
   // local mixins + variables [2]  
   $box-height: 300px;  
