@@ -24,7 +24,6 @@
 - [Semantic HTML](#semantic-html)
 - [Gulp additions](#gulp-additions)
 - [Additional best practices](#additional-best-practices)
-- [scss-lint config adjustments](#scss-lint-config-adjustments)
 
 <!-- TO DO 
 
@@ -587,50 +586,4 @@ MQpacker - concatenates media queries for smaller CSS [https://github.com/hail2
     .title {
       color: $highlight;
     }
-```
-
-### scss-lint config adjustments 
-
-```
-linters:  
-    DuplicateProperty:
-
-     enabled: false # We have fall backs with duplicate tags
-
-Indentation:  
-     enabled: true # 4 spaces of indentation  
-     width: 4
-
-SelectorDepth:  
-     enabled: true # 4 deep selector  
-     max_depth: 4
-
-NestingDepth:  
-     enabled: true # 4 deep selector  
-     max_depth: 4
-
-PropertySortOrder:  
-     enabled: false # don't order properties alphabetically
-
-NameFormat:  
-     enabled: true # make vars etc use small-hyphen-case  
-     convention: hyphenated_lowercase
-
-# new changes below
-
-QualifyingElement:  
-    enabled: false # allow qualifying of attributes and classes  
-   # we should avoid naming tags as it adds unnecessary specificity. Eg - div.thing {colour:red}  
-   # Quasi qualified sectors are ok for readability sake e.g. - /*ul*/.list
-
-SingleLinePerProperty:  
-    true # better readability
-
-StringQuotes:  
-    enabled: true  
-    style: single_quote #faster to type than double quote
-
-SelectorFormat:  
-    enabled: true  
-    convention: hyphenated_BEM # to parse CSS and alert and non BEM syntax
 ```
