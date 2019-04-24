@@ -1,7 +1,6 @@
 # Front end html css guidelines 2018
 
 ### Contents
-- [Contents](#contents)
 - [Why have guidelines?](#why-have-guidelines)
 - [Principles for scalable front end development](#principles-for-scalable-front-end-development)
 - [Why used component based CSS?](#why-used-component-based-css)
