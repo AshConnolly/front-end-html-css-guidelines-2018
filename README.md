@@ -477,7 +477,7 @@ example element - 
 }
 ```
 
-See a compiled version here - [https://gist.github.com/Ashffrees/a71bbeae0bc58db2e43a6304b7842400](https://gist.github.com/Ashffrees/a71bbeae0bc58db2e43a6304b7842400)
+See a compiled version [here](https://gist.github.com/AshConnolly/4d78295b10fc4f94c73ec67b9f55555a)
 
 ### Using at-root for component encapsulation
 
