@@ -1,5 +1,7 @@
 # Front end html css guidelines 2018
 
+![](https://raw.githubusercontent.com/AshConnolly/front-end-html-css-guidelines-2018/master/aron-visuals-3jBU9TbKW7o-unsplash.jpg)
+
 ### Contents
 - [Why have guidelines?](#why-have-guidelines)
 - [Principles for scalable front end development](#principles-for-scalable-front-end-development)
